@@ -1,22 +1,29 @@
 $theme:rgb(93, 172, 129);
 $white:rgb(252, 250, 242);
-.color-3 {
-  stop-color: rgb(27, 129, 62);
+$theme-2:rgb(12, 72, 66);
+$theme-3:rgb(12, 72, 66);
+$theme-4:rgb(4, 68, 50);
+$mon-1: rgb(21, 173, 69);
+$mon-2: rgb(27, 129, 62);
+$hello: rgb(24, 53, 50);
+.color-mon-1 {
+  stop-color: $mon-1;
 }
 
-.color-2 {
-  stop-color: rgb(12, 72, 66);
+.color-mon-2 {
+  stop-color: $mon-2;
 }
 
-.color-1 {
-  stop-color: rgb(21, 173, 69);
+.color-theme-2 {
+  stop-color: $theme-2;
 }
 
-.color-4 {
-  stop-color: #00896C;
+.color-hello {
+  stop-color: $hello;
 }
 
 html {
+  font-family: 'Source Sans Pro', sans-serif;
   overflow: hidden;
 }
 
@@ -27,12 +34,21 @@ body {
 }
 
 .container {
+  background-color: $hello;
+  background-image: url(../images/hello-world.jpg);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: fixed;
+  left: 0;
+  top: 0;
   perspective: 1px;
   height: 100vh;
+  width: 100vw;
   overflow-x: hidden;
   overflow-y: auto;
-  font-size: 200%;
-  background-color: $theme;
+  font-size: 100%;
   min-width: 650px;
   min-height: 400px;
 }
@@ -54,9 +70,13 @@ body {
 
 .nav-fixed {
   box-sizing: border-box;
-  padding-top: 10px!important;
+  padding-top: 13px!important;
   height: 75px!important;
-  background: rgb(12, 72, 66);
+  background: $theme-2;
+  .title {
+    font-size: 30px !important;
+    margin-top: 10px;
+  }
 }
 
 .nav {
@@ -69,17 +89,18 @@ body {
   z-index: 9999;
   min-width: 600px;
   box-sizing: border-box;
-  padding-top: 30px;
+  padding-top: 40px;
   height: 100px;
   .title {
     position: absolute;
     color: $white;
     z-index: 999;
-    margin-left: 30px;
+    margin-left: 40px;
     text-align: center;
     user-select: none;
-    font-size: 30px;
+    font-size: 38px;
     letter-spacing: 4px;
+    transition: all .3s;
     .content {
       a {
         color: $white;
@@ -88,12 +109,12 @@ body {
     }
     &:hover {
       .line {
-        width: 90%;
+        width: 90% !important;
       }
     }
     >.line {
       display: inline-block;
-      margin: 10px auto;
+      margin: 15px auto;
       border-top: 3px solid $white;
       width: 100%;
       animation: title-hr 1s ease-out;
@@ -117,7 +138,7 @@ body {
         color: $white;
         text-decoration: none;
         padding-bottom: 10px;
-        transition: all .4s;
+        transition: all .2s;
         &:hover {
           border-bottom: 3px solid $white !important;
         }
@@ -131,6 +152,7 @@ body {
 }
 
 .background {
+  background: $theme;
   position: relative;
   .title {
     position: absolute;
@@ -142,13 +164,15 @@ body {
     transform: translate3D(0, 0, -0.1px) scale(1.1);
     font-size: 50px;
     z-index: 1001;
+    user-select: none;
+    font-weight: lighter;
   }
   .sun {
     position: absolute;
-    left: 27%;
-    bottom: 35%;
-    width: 50%;
-    transform: translate3D(0, 40%, 0.5px) scale(0.5);
+    left: 41.6%;
+    bottom: 16%;
+    width: 16%;
+    transform: translate3D(0, 0, 0.5px) scale(0.5);
     z-index: 990;
     transition: all 0.5s;
   }
@@ -170,10 +194,10 @@ body {
   }
   .mon-3 {
     position: absolute;
-    left: 24%;
-    bottom: -13%;
-    width: 60%;
-    transform: translate3D(0, 32%, -0.8px) scale(1.6);
+    left: 16.67%;
+    bottom: -40%;
+    width: 80%;
+    transform: translate3D(0, 35%, -0.8px) scale(1.6);
     z-index: 1000;
     transition: all 0.5s;
   }
@@ -182,7 +206,7 @@ body {
     transition: all 0.5s;
     left: 2%;
     bottom: 0;
-    width: 40%;
+    width: 37%;
     z-index: 999;
   }
   .mon-5 {
@@ -190,16 +214,17 @@ body {
     transition: all 0.5s;
     right: 0%;
     bottom: 0;
-    width: 40%;
+    width: 37%;
     z-index: 998;
   }
 }
 
 .blog {
-  padding: auto 15%;
-  overflow: hidden;
-  background: rgb(12, 72, 66);
+  padding-left: 10%;
   position: relative;
+  overflow: hidden;
+  height: calc(100vh + 10px);
+  background: $theme-2;
   .mon-6 {
     position: absolute;
     transition: all 0.5s;
@@ -216,39 +241,55 @@ body {
     width: 20%;
     z-index: 998;
   }
-  .title {
+  .blog-text {
     z-index: 1002;
-    position: absolute;
-    top: 20%;
+    position: relative;
+    top: 100px;
     text-align: left;
     width: 100%;
-    transform: translate3D(0, -10%, -0.1px);
-    >p {
-      color: $white;
-      font-size: 40px;
-      >a {
-        position: absolute;
-        left: 100px;
+    div {
+      position: relative;
+    }
+    .title {
+      text-align: center;
+      display: inline-block;
+      p {
         color: $white;
-        font-size: 20px;
-        text-decoration: none;
-        transition: all .3s;
-        &:hover {
-          color: rgb(36, 32, 32);
-          background: #fff;
-        }
-        border: 1px solid $white;
-        border-radius: 5px;
-        padding: 7px 20px;
-        vertical-align: middle;
+        font-size: 30px;
+        user-select: none;
+        margin-bottom: 9px;
+      }
+      .line {
+        width: 80%;
+        border-top: 2px solid rgb(32, 92, 86);
+        margin: auto;
+        margin-bottom: 15px;
       }
     }
+    .btn {
+      position: relative;
+      top: 10px;
+      left: 50px;
+      color: $white;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all .3s;
+      &:hover {
+        color: rgb(36, 32, 32);
+        background: #fff;
+      }
+      border: 1px solid $white;
+      border-radius: 5px;
+      padding: 7px 20px;
+      vertical-align: middle;
+    }
     .blogContent {
-      margin-left: 170px;
+      margin-left: 100px;
+      margin-bottom: 10px;
       text-align: left;
       a {
         color: $white;
-        font-size: 22px;
+        font-size: 18px;
         display: block;
         margin: 10px auto;
         text-decoration: none;
@@ -262,10 +303,126 @@ body {
   }
 }
 
+.hello-world {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  .title {
+    padding-top: 60vh;
+    letter-spacing: 10px;
+    text-align: center;
+    font-size: 50px;
+    color: $white;
+  }
+  .mon-3 {
+    position: absolute;
+    left: 22%;
+    bottom: -28%;
+    width: 62%;
+    transform: translate3D(0, 0, 0.2px) scale(0.6);
+    z-index: -1;
+    transition: all 0.5s;
+  }
+}
+
 .project {
-  background: #00896C;
+  padding-top: 50px;
+  background: linear-gradient(to bottom, $theme-3, $theme-4);
+  .project-card {
+    overflow: auto;
+    color: $white;
+    margin-top: 30px;
+    margin-left: 16%;
+    margin-right: 16%;
+    padding-bottom: 30px;
+    .title {
+      font-size: 22px;
+    }
+    .content {
+      font-size: 16px;
+      margin: 20px 80px;
+    }
+    a {
+      color: $white;
+      text-decoration: none;
+      float: right;
+      margin: 0 30px;
+      font-size: 15px;
+      border: 1px solid $white;
+      padding: 5px 20px;
+      transition: all .3s;
+      border-radius: 5px;
+      &:hover {
+        background: $white;
+        color: #000;
+      }
+    }
+  }
+  .project-card:not(:last-child) {
+    border-bottom: 1px solid rgb(32, 92, 86);
+    margin-bottom: 40px;
+  }
 }
 
 .about {
-  background: #1B813E;
+  height: calc((20vh + 400px) * 2);
+  position: relative;
+  width: 100%;
+  background: $theme-4;
+  text-align: center;
+  .avatar {
+    position: relative;
+    user-select: none;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    top: 20vh;
+    left: calc(50% - 100px);
+    &:hover img {
+      transform: rotateZ(360deg);
+    }
+    img {
+      height: 200px;
+      width: 200px;
+      transform-origin: 50% 50%;
+      transition: all .5s;
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 30px 10px rgba(3, 67, 50, .7) inset;
+    }
+  }
+  .detail {
+    position: relative;
+    top: calc(20vh + 200px);
+    //left: 60%;
+    color: $white;
+    font-size: 22px;
+    font-weight: lighter;
+    div {
+      margin-bottom: 30px;
+    }
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+  .footer {
+    position: relative;
+    top: calc(20vh + 350px);
+    color: $white;
+    font-size: 13px;
+    svg {
+      margin: auto 4px;
+      vertical-align: middle;
+    }
+    margin-bottom: 10px;
+  }
 }
