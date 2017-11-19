@@ -1,0 +1,224 @@
+.color-3 {
+  stop-color: #1b813e; }
+
+.color-2 {
+  stop-color: #0c4842; }
+
+.color-1 {
+  stop-color: #15ad45; }
+
+.color-4 {
+  stop-color: #00896C; }
+
+html {
+  overflow: hidden; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #5dac81; }
+
+.container {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 200%;
+  background-color: #5dac81;
+  min-width: 650px;
+  min-height: 400px; }
+
+.svg-style {
+  position: absolute; }
+
+@keyframes title-hr {
+  0% {
+    opacity: 0;
+    width: 0; }
+  100% {
+    opacity: 1;
+    width: 100%; } }
+.nav-fixed {
+  box-sizing: border-box;
+  padding-top: 10px !important;
+  height: 75px !important;
+  background: #0c4842; }
+
+.nav {
+  transition: all .5s;
+  transform: translateZ(-1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 17px);
+  z-index: 9999;
+  min-width: 600px;
+  box-sizing: border-box;
+  padding-top: 30px;
+  height: 100px; }
+  .nav .title {
+    position: absolute;
+    color: #fcfaf2;
+    z-index: 999;
+    margin-left: 30px;
+    text-align: center;
+    user-select: none;
+    font-size: 30px;
+    letter-spacing: 4px; }
+    .nav .title .content a {
+      color: #fcfaf2;
+      text-decoration: none; }
+    .nav .title:hover .line {
+      width: 90%; }
+    .nav .title > .line {
+      display: inline-block;
+      margin: 10px auto;
+      border-top: 3px solid #fcfaf2;
+      width: 100%;
+      animation: title-hr 1s ease-out;
+      transition: all .2s;
+      color: #5dac81;
+      user-select: none;
+      transform: translateY(-10px); }
+  .nav ul {
+    position: absolute;
+    right: 20px;
+    margin: 15px 50px;
+    font-size: 20px;
+    color: #fcfaf2; }
+    .nav ul li {
+      margin: auto 0;
+      display: inline-block; }
+      .nav ul li a {
+        letter-spacing: 1px;
+        color: #fcfaf2;
+        text-decoration: none;
+        padding-bottom: 10px;
+        transition: all .4s; }
+        .nav ul li a:hover {
+          border-bottom: 3px solid #fcfaf2 !important; }
+    .nav ul li:not(:first-child):before {
+      margin: 28px;
+      content: ' '; }
+
+.background {
+  position: relative; }
+  .background .title {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    left: 0;
+    text-align: center;
+    color: #fcfaf2;
+    transform: translate3D(0, 0, -0.1px) scale(1.1);
+    font-size: 50px;
+    z-index: 1001; }
+  .background .sun {
+    position: absolute;
+    left: 27%;
+    bottom: 35%;
+    width: 50%;
+    transform: translate3D(0, 40%, 0.5px) scale(0.5);
+    z-index: 990;
+    transition: all 0.5s; }
+  .background .mon-1 {
+    position: absolute;
+    transition: all 0.5s;
+    left: 14%;
+    bottom: 0;
+    width: 40%;
+    z-index: 996; }
+  .background .mon-2 {
+    position: absolute;
+    transition: all 0.5s;
+    right: 11%;
+    bottom: 0;
+    width: 40%;
+    z-index: 997; }
+  .background .mon-3 {
+    position: absolute;
+    left: 24%;
+    bottom: -13%;
+    width: 60%;
+    transform: translate3D(0, 32%, -0.8px) scale(1.6);
+    z-index: 1000;
+    transition: all 0.5s; }
+  .background .mon-4 {
+    position: absolute;
+    transition: all 0.5s;
+    left: 2%;
+    bottom: 0;
+    width: 40%;
+    z-index: 999; }
+  .background .mon-5 {
+    position: absolute;
+    transition: all 0.5s;
+    right: 0%;
+    bottom: 0;
+    width: 40%;
+    z-index: 998; }
+
+.blog {
+  padding: auto 15%;
+  overflow: hidden;
+  background: #0c4842;
+  position: relative; }
+  .blog .mon-6 {
+    position: absolute;
+    transition: all 0.5s;
+    left: 12%;
+    bottom: 0;
+    width: 20%;
+    z-index: 999; }
+  .blog .mon-7 {
+    position: absolute;
+    transition: all 0.5s;
+    right: 10%;
+    bottom: 0;
+    width: 20%;
+    z-index: 998; }
+  .blog .title {
+    z-index: 1002;
+    position: absolute;
+    top: 20%;
+    text-align: left;
+    width: 100%;
+    transform: translate3D(0, -10%, -0.1px); }
+    .blog .title > p {
+      color: #fcfaf2;
+      font-size: 40px; }
+      .blog .title > p > a {
+        position: absolute;
+        left: 100px;
+        color: #fcfaf2;
+        font-size: 20px;
+        text-decoration: none;
+        transition: all .3s;
+        border: 1px solid #fcfaf2;
+        border-radius: 5px;
+        padding: 7px 20px;
+        vertical-align: middle; }
+        .blog .title > p > a:hover {
+          color: #242020;
+          background: #fff; }
+    .blog .title .blogContent {
+      margin-left: 170px;
+      text-align: left; }
+      .blog .title .blogContent a {
+        color: #fcfaf2;
+        font-size: 22px;
+        display: block;
+        margin: 10px auto;
+        text-decoration: none;
+        transition: all .3s; }
+        .blog .title .blogContent a:hover {
+          transform: translateX(10px);
+          color: #fff; }
+
+.project {
+  background: #00896C; }
+
+.about {
+  background: #1B813E; }
+
+/*# sourceMappingURL=style.css.map */

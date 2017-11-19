@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=800, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hello, World</title>
+  <title>Zhenly</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
-  Hello, MegaShow!
+  <div id="nav" class="nav">
+    <div class="title">
+      <div class="content"> <a id="toBack" href="javascript:;">Zhenly</a></div>
+      <div class="line"></div>
+    </div>
+    <ul>
+      <li>
+        <a id="toBlog" href="javascript:;">Blog</a>
+      </li>
+      <li>
+        <a id="toProject" href="javascript:;">Project</a>
+      </li>
+      <li>
+        <a id="toAbout" href="javascript:;">About</a>
+      </li>
+    </ul>
+  </div>
+  <div id="container" class="container">
+    <div id="background" class="background">
+      <div class="title">Hello, World!</div>
+      <svg class="sun" viewBox="0, 0, 240, 200">
+          <circle cx="100" cy="140" r="40" fill="#CB4042" />
+      </svg>
+      <svg class="mon-3" viewBox="0, 0, 240, 200">
+        <polygon filter="url(#filter-mon)" fill="url(#gradient-mon-2)" points="0,200 200,200 100,0"/>
+      </svg>
+      <svg class="mon-4" viewBox="0, 0, 240, 200">
+        <polygon filter="url(#filter-mon)" fill="url(#gradient-mon-2)" points="0,200 200,200 100,20"/>
+      </svg>
+      <svg class="mon-5" viewBox="0, 0, 240, 200">
+        <polygon filter="url(#filter-mon)" fill="url(#gradient-mon-2)" points="0,200 200,200 100,20"/>
+      </svg>
+      <svg class="mon-1" viewBox="0, 0, 240, 200">
+        <polygon filter="url(#filter-mon)" fill="url(#gradient-mon-1)" points="0,200 200,200 100,50"/>
+      </svg>
+      <svg class="mon-2" viewBox="0, 0, 240, 200">
+        <polygon filter="url(#filter-mon)" fill="url(#gradient-mon-1)" points="0,200 200,200 100,50"/>
+      </svg>
+    </div>
+    <div id="blog" class="blog">
+      <svg id="mon-6" class="mon-6" viewBox="0, 0, 240, 200">
+        <polygon filter="url(#filter-mon)" fill="url(#gradient-mon-3)" points="0,200 200,200 100,20"/>
+      </svg>
+      <svg id="mon-7" class="mon-7" viewBox="0, 0, 240, 200">
+        <polygon filter="url(#filter-mon)" fill="url(#gradient-mon-3)" points="0,200 200,200 100,20"/>
+      </svg>
+      <div class="title">
+        <p>The Latest Article</p>
+        <div id="blogContent" class="blogContent"></div>
+        <p><a href="https://blog.zhenly.cn" target="_blank">All Article</a></p>
+      </div>
+    </div>
+    <div id="project" class="project"></div>
+    <div id="about" class="about"></div>
+  </div>
+  <svg class="svg-style">
+      <defs>
+        <linearGradient id="gradient-mon-1" x1="0" x2="0" y1="0" y2="1">
+          <stop class="color-3" offset="0%" />
+          <stop class="color-2" offset="100%" />
+        </linearGradient>
+        <linearGradient id="gradient-mon-2" x1="0" x2="0" y1="0" y2="1">
+          <stop class="color-1" offset="0%" />
+          <stop class="color-2" offset="100%" />
+        </linearGradient>
+        <linearGradient id="gradient-mon-3" x1="0" x2="0" y1="0" y2="1">
+          <stop class="color-3" offset="0%" />
+          <stop class="color-2" offset="100%" />
+        </linearGradient>
+        <filter id="filter-mon" x="0" y="0" width="200%" height="200%">
+          <feOffset result="offOut" in="SourceGraphic" dx="10" dy="10" />
+          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+      </defs>
+  </svg>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/index.js"></script>
+
 </body>
+
 </html>
